@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_29_021934) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_29_033157) do
   create_table "nodes", force: :cascade do |t|
     t.integer "identifier"
     t.integer "current_state"
@@ -18,6 +18,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_29_021934) do
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "nodes_neighbors", id: false, force: :cascade do |t|
+    t.integer "node_id"
+    t.integer "neighbor_id"
+    t.index ["neighbor_id"], name: "index_nodes_neighbors_on_neighbor_id"
+    t.index ["node_id"], name: "index_nodes_neighbors_on_node_id"
   end
 
 end
