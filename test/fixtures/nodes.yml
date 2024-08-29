@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identifier: 1
+  current_state: 1
+  log: MyText
+  active: false
+
+two:
+  identifier: 1
+  current_state: 1
+  log: MyText
+  active: false
